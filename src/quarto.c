@@ -2,6 +2,7 @@
 #include <stdio.h>
 #include <time.h>
 #include <stdlib.h>
+#include <stdbool.h>
 #include <string.h>
 
 void init_tab(piece ptab[16])
@@ -278,8 +279,10 @@ piece select_piece(board game, char player[])
     do
     {
         printf("\033[4m\033[33m%s\033[0m, veuillez sélectionner une piece: ", player);
+        scanf("%1d%1d%1d%1d", &size, &shape, &color, &top);
         while (scanf("%1d%1d%1d%d", &size, &shape, &color, &top) == 0)
         {
+            printf("no way\n");
             getchar();
         }
         p = get_piece_from_characteristics(size, shape, color, top);
@@ -295,7 +298,7 @@ int main(int argc, char **argv)
     {
         if ((strcmp("-help", argv[1]) == 0) || (strcmp("-h", argv[1]) == 0))
         {
-            system("cat < ./manual.txt");
+            system("type manual.txt");
         }
         else
         {
@@ -304,7 +307,7 @@ int main(int argc, char **argv)
         return 0;
     }
 
-    system("clear && cat < ./title.txt");
+    system("cls && type title.txt");
 
     piece p;
     piece ptab[16];
@@ -326,20 +329,20 @@ int main(int argc, char **argv)
         show_available_pieces(game, ptab);
 
         p = select_piece(game, player_turn == 0 ? player2 : player1);
-        system("clear");
+        system("cls");
         affichage_plateau(game);
         printf("\nPièce sélectionnée:\n");
         show_selected_piece(p);
 
         choix_position(&ligne, &colonne, p, game, player_turn == 0 ? player1 : player2);
 
-        system("clear");
+        system("cls");
         affichage_plateau(game);
 
         player_turn = (player_turn + 1) % 2;
     }
 
-    system("clear && cat < ./title.txt");
+    system("cls && type title.txt");
     affichage_plateau(game);
     printf("\033[1mLe gagnant est \033[35m%s\033[0m\033[1m, Bravo à vous !\033[0m\nMerci d'avoir joué, à bientôt !\n", (player_turn == 0 ? player2 : player1));
 

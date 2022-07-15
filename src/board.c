@@ -34,13 +34,16 @@ void destroy_game(board game)
 // Renvoie "vrai" ou "faux" si c'est le cas.
 bool is_occupied(board game, int line, int column)
 {
+    printf("test is_occupied\n");
+    printf("line: %d\n", line);
+    printf("column: %d\n", column);
     if (game->board[line][column] == NULL)
     {
-        return 0;
+        return false;
     }
     else
     {
-        return 1;
+        return true;
     }
 }
 
@@ -48,7 +51,7 @@ bool is_occupied(board game, int line, int column)
 // Renvoie NULL s'il n'y a pas de pièce
 piece get_piece(board game, int line, int column)
 {
-    if (is_occupied(game, line, column) == 1 && line >= 0 && line < 4 && column >= 0 && column < 4)
+    if (is_occupied(game, line, column) && line >= 0 && line < 4 && column >= 0 && column < 4)
     {
         piece p;
         p = malloc(sizeof(struct piece_t));
@@ -57,6 +60,7 @@ piece get_piece(board game, int line, int column)
         p->size = game->board[line][column]->size;
         p->top = game->board[line][column]->top;
         p->shape = game->board[line][column]->shape;
+
         return p;
     }
     else
@@ -107,7 +111,7 @@ enum shape piece_shape(piece a_piece)
     return a_piece->shape;
 }
 
-int check_line(board game, piece last_piece, int cSize, int cShape, int cColor, int cTop)
+bool check_line(board game, piece last_piece, int cSize, int cShape, int cColor, int cTop)
 {
     for (int i = 0; i < 4; i++)
     {
@@ -133,13 +137,13 @@ int check_line(board game, piece last_piece, int cSize, int cShape, int cColor, 
     }
     if (cSize == 4 || cShape == 4 || cColor == 4 || cTop == 4)
     {
-        return 1;
+        return true;
     }
 
-    return 0;
+    return false;
 }
 
-int check_column(board game, piece last_piece, int cSize, int cShape, int cColor, int cTop)
+bool check_column(board game, piece last_piece, int cSize, int cShape, int cColor, int cTop)
 {
     for (int i = 0; i < 4; i++)
     {
@@ -165,10 +169,10 @@ int check_column(board game, piece last_piece, int cSize, int cShape, int cColor
     }
     if (cSize == 4 || cShape == 4 || cColor == 4 || cTop == 4)
     {
-        return 1;
+        return true;
     }
 
-    return 0;
+    return false;
 }
 
 int check_diag1(board game, piece last_piece, int cSize, int cShape, int cColor, int cTop)
@@ -249,12 +253,12 @@ bool has_winner(board game)
 
     if (game->last_line == game->last_column && check_diag1(game, last_piece, cSize, cShape, cColor, cTop) == 1)
     {
-        return 1;
+        return true;
     }
 
     if (game->last_column == (DIMENSION - 1) - game->last_line && check_diag2(game, last_piece, cSize, cShape, cColor, cTop) == 1)
     {
-        return 1;
+        return true;
     }
 
     return check_column(game, last_piece, cSize, cShape, cColor, cTop) ||
@@ -322,6 +326,8 @@ board new_game()
 {
     board game;
     game = malloc(sizeof(struct board_t));
+    game->last_column = 0;
+    game->last_line = 0;
 
     for (int i = 0; i < DIMENSION; i++)
     {
