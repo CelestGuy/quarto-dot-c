@@ -1,0 +1,12 @@
+  /XXXXXX                                      /XX                            
+ /XX__  XX                                    | XX                            
+| XX  \ XX  /XX   /XX   /XXXXXX    /XXXXXX   /XXXXXX     /XXXXXX         /XXXXXXX
+| XX  | XX | XX  | XX  |____  XX  /XX__  XX |_  XX_/    /XX__  XX       /XX_____/
+| XX  | XX | XX  | XX   /XXXXXXX | XX  \__/   | XX     | XX  \ XX      | XX      
+| XX/XX XX | XX  | XX  /XX__  XX | XX         | XX /XX | XX  | XX      | XX      
+|  XXXXXX/ |  XXXXXX/ |  XXXXXXX | XX         |  XXXX/ |  XXXXXX/  /XX |  XXXXXXX
+ \____ XXX  \______/   \_______/ |__/          \___/    \______/  |__/  \_______/
+      \__/                                                                
+                Un jeu repris par Baptiste Chéruel et Théo Duval.
+                
+

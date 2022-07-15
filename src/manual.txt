@@ -1,0 +1,25 @@
+
+
+Welcome on Quarto.c !
+
+Sur cette page vous retrouverez toutes les instructions pour bien utiliser le jeu et vous
+amuser avec vos amis.
+
+Lorsque le jeu se lance vous devez d’abord entrer votre nom ainsi que celui de votre
+adversaire, c’est essentiel pour que le jeu précise qui doit effectuer une action.
+
+La partie peut commencer. A tour de rôle, le joueur A va choisir la pièce que le joueur B va
+placer, en écrivant les caractéristiques de la pièce, qui sont la taille, grande ou petite, la
+forme, carrée ou circulaire, la couleur, rouge ou bleu, et la pointe de la pièce, absente ou présente. 
+Les caractéristiques se définissent par un 0 ou un 1, si le joueur A choisit la pièce
+“Grande Circulaire Bleu Sans pointe”, il devra écrire 0110. Le joueur B va ensuite placer la
+pièce sur un emplacement du plateau, en choisissant le numéro de ligne puis le numéro de
+colonne, les deux allant de 0 à 3.
+
+Le gagnant est le joueur qui a réussi à aligner 4 pièces ayant au moins une caractéristique
+en commun, par exemple si trois pièces grandes sont déjà alignés, que le joueur B décide
+que le joueur A a à placer une grande pièce et qu’il l’aligne aux trois autres, le joueur A aura
+gagné.
+
+
+
