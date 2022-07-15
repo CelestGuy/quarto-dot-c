@@ -1,4 +1,4 @@
-# Quarto.c
+# Quarto.c (Tentative de version pour Windows, NE MARCHE PAS)
 ## Description en Français
 Un mini-jeu console basé sur le jeu de société "Quarto" (https://fr.wikipedia.org/wiki/Quarto). 
 Ecrit en C par Baptiste Cheruel (https://twitter.com/kido009) et moi-même.
