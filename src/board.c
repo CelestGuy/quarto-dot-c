@@ -1,7 +1,7 @@
 #include <stdbool.h>
 #include <stdlib.h>
 #include <stdio.h>
-#include "board.h"
+#include "./headers/board.h"
 
 struct piece_t
 {

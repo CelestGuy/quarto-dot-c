@@ -1,5 +1,5 @@
 # Quarto.c
-## Français
+## Description en Français
 Un mini-jeu console basé sur le jeu de société "Quarto" (https://fr.wikipedia.org/wiki/Quarto). 
 Ecrit en C par Baptiste Cheruel (https://twitter.com/kido009) et moi-même.
 
@@ -19,7 +19,9 @@ Amusez-vous bien !
 
 
 
-## English
+
+
+## English description
 A bash mini-game based on the board game "Quarto" (https://en.wikipedia.org/wiki/Quarto_(board_game)). 
 Written in C Baptiste Cheruel (https://twitter.com/kido009) and me.
 
