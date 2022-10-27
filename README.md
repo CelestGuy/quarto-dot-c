@@ -1,7 +1,7 @@
 # Quarto.c
 ## Description en Français
 Un mini-jeu console basé sur le jeu de société "Quarto" (https://fr.wikipedia.org/wiki/Quarto). 
-Ecrit en C par Baptiste Cheruel (https://twitter.com/kido009) et moi-même.
+Ecrit en C par Baptiste Cheruel (https://github.com/Miokido) et moi-même.
 
 Le jeu n'est actuellement disponible que sur Linux (et WSL) vous pouvez le lancer dans la console en faisant:
 
@@ -23,7 +23,7 @@ Amusez-vous bien !
 
 ## English description
 A bash mini-game based on the board game "Quarto" (https://en.wikipedia.org/wiki/Quarto_(board_game)). 
-Written in C Baptiste Cheruel (https://twitter.com/kido009) and me.
+Written in C Baptiste Cheruel (https://github.com/Miokido) and me.
 
 This game is only available on Linux (and WSL), you can run it in a terminal with:
 
