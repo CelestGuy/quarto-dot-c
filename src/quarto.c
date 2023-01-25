@@ -54,7 +54,7 @@ void create_players(char player1[], char player2[])
     }
 }
 
-void choix_position(int *ligne, int *colonne, piece p, board game, char player[])
+void choose_position(int *ligne, int *colonne, piece p, board game, char player[])
 {
     printf("\nAu tour de \033[4m\033[32m%s\033[0m\n", player);
     enum return_code res = POSITION;
@@ -130,7 +130,7 @@ int hollow(int i, int j, piece p)
     return res;
 }
 
-void affichage_plateau(board game)
+void print_board(board game)
 {
     piece p;
     for (int i = 0; i <= 24; i++)
@@ -223,7 +223,10 @@ void show_available_pieces(board game, piece ptab[16])
             }
             else
             {
-                if (tall(i, j, ptab[tour]) && square(i, j, ptab[tour]) && hollow(i, j, ptab[tour]) && !is_present_on_board(game, ptab[tour]))
+                if (tall(i, j, ptab[tour]) 
+                    && square(i, j, ptab[tour]) 
+                    && hollow(i, j, ptab[tour]) 
+                    && !is_present_on_board(game, ptab[tour]))
                 {
                     if (piece_color(ptab[tour]) == RED)
                     {
@@ -327,20 +330,20 @@ int main(int argc, char **argv)
 
         p = select_piece(game, player_turn == 0 ? player2 : player1);
         system("clear");
-        affichage_plateau(game);
+        print_board(game);
         printf("\nPièce sélectionnée:\n");
         show_selected_piece(p);
 
-        choix_position(&ligne, &colonne, p, game, player_turn == 0 ? player1 : player2);
+        choose_position(&ligne, &colonne, p, game, player_turn == 0 ? player1 : player2);
 
         system("clear");
-        affichage_plateau(game);
+        print_board(game);
 
         player_turn = (player_turn + 1) % 2;
     }
 
     system("clear && cat < ./title.txt");
-    affichage_plateau(game);
+    print_board(game);
     printf("\033[1mLe gagnant est \033[35m%s\033[0m\033[1m, Bravo à vous !\033[0m\nMerci d'avoir joué, à bientôt !\n", (player_turn == 0 ? player2 : player1));
 
     destroy_game(game);

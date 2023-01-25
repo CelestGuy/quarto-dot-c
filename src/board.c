@@ -18,20 +18,29 @@ struct board_t
     int last_line;
 };
 
-// Revoie le plateau passé en paramètre.
+/**
+ * Revoie le plateau passé en paramètre. 
+ */
 board copy_game(board original_game)
 {
     return original_game;
 }
 
-// Permet de vider la mémoire du programme.
+/**
+ * Permet de vider la mémoire du programme.
+ */
 void destroy_game(board game)
 {
     free(game);
 }
 
-// Vérifie si la case en "line" "column" est occupée ou non.
-// Renvoie "vrai" ou "faux" si c'est le cas.
+/** 
+ * @param line
+ * @param column
+ * 
+ * Vérifie si la case en #line et #column est occupée ou non.
+ * Renvoie "vrai" ou "faux" si c'est le cas.
+ */
 bool is_occupied(board game, int line, int column)
 {
     if (game->board[line][column] == NULL)
@@ -43,6 +52,7 @@ bool is_occupied(board game, int line, int column)
         return 1;
     }
 }
+
 
 // Récupère la pièce qui est sur "line" et "column" dans le plateau "game".
 // Renvoie NULL s'il n'y a pas de pièce
@@ -64,6 +74,7 @@ piece get_piece(board game, int line, int column)
         return NULL;
     }
 }
+
 
 // Renvoie la taille, la couleur, la forme et le type de la piece, selon la fontion.
 // Renvoie la caractéristique par défaut s'il n'y a pas de piece.
